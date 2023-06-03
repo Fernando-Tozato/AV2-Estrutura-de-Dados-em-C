@@ -1,9 +1,11 @@
+// includes
 #include <stdio.h> 
 #include <stdlib.h>
 #include <locale.h>
 #include <limits.h>
 #include "clear.h"
 
+// structs
 typedef struct no {
 	int chave;
 	struct no *esquerda, *direita;
@@ -14,6 +16,7 @@ typedef struct {
 	int tam;
 } ArvB;
 
+// função para inserir nós
 No* Insere (No *raiz, int valor) {
 	if (raiz == NULL) {
 		No *novo = (No*)malloc(sizeof(No));
@@ -32,6 +35,7 @@ No* Insere (No *raiz, int valor) {
 	}
 }
 
+// função para imprimir da esquerda para a direita
 void Imprimir (No *raiz) {
 	if (raiz != NULL) {
 		Imprimir(raiz->esquerda);
@@ -40,9 +44,10 @@ void Imprimir (No *raiz) {
 	}
 }
 
+// função para remover itens
 No* Remove (No *raiz, int item) {
 	if (raiz == NULL) {
-		printf("\nValor n�o encontrado!\n");
+		printf("\nValor não encontrado!\n");
 		return NULL;
 	} else {
 		if (raiz->chave == item) {
@@ -78,13 +83,14 @@ No* Remove (No *raiz, int item) {
 	}
 }
 
+// função para buscar itens
 No* Busca (No *raiz, int item) {
 	if (raiz == NULL) {
-		printf("\nValor n�o encontrado!\n");
+		printf("\nValor não encontrado!\n");
 		return NULL;
 	} else {
 		if (raiz->chave == item) {
-			printf("\n\nO item est� na �rvore.\n");
+			printf("\n\nO item está na árvore.\n");
 			return NULL;
 		} else {
 			if (item < raiz->chave)
@@ -96,6 +102,7 @@ No* Busca (No *raiz, int item) {
 	}
 }
 
+// função para imprimir da direita para a esquerda
 void ImprimirInverso (No *raiz) {
 	if (raiz != NULL) {
 		ImprimirInverso(raiz->direita);
@@ -104,9 +111,10 @@ void ImprimirInverso (No *raiz) {
 	}
 }
 
+// função para buscar maior item
 int MaiorChave (No *raiz) {
 	if (raiz == NULL) {
-		printf("\nA �rvore est� vazia!\n");
+		printf("\nA árvore está vazia!\n");
 		return 0;
 	} 
 	No *tmp;
@@ -121,6 +129,7 @@ int MaiorChave (No *raiz) {
 	return maior;
 }
 
+// função principal da árvore
 void Arvore () {
 	setlocale(LC_ALL, "Portuguese");
 	
@@ -133,7 +142,7 @@ void Arvore () {
 	
 	clear();
 	while(1) {
-		printf("O que voc� deseja fazer?");
+		printf("O que você deseja fazer?");
 		printf("\n    1 - Inserir item.");
 		printf("\n    2 - Remover item.");
 		printf("\n    3 - Imprimir (esquerda-direita).");
@@ -146,14 +155,14 @@ void Arvore () {
 		
 		switch (e) {
 			case 1:
-				printf("\n\nDigite o item que voc� deseja inserir: ");
+				printf("\n\nDigite o item que você deseja inserir: ");
 				scanf("%d",&item);
 				raiz = Insere(raiz, item);
 				clear();
 				printf("Item inserido com sucesso!\n\n\n");
 				break;
 			case 2:
-				printf("\n\nDigite o item que voc� deseja remover: ");
+				printf("\n\nDigite o item que você deseja remover: ");
 				scanf("%d",&item);
 				raiz = Remove(raiz, item);
 				clear();
@@ -172,7 +181,7 @@ void Arvore () {
 				clear();
 				break;
 			case 5:
-				printf("\n\nDigite o item que voc� deseja buscar: ");
+				printf("\n\nDigite o item que você deseja buscar: ");
 				scanf("%d",&item);
 				raiz = Busca(raiz, item);
 				raiz = Insere(raiz, item);
@@ -193,7 +202,7 @@ void Arvore () {
 				return;
 			default:
 				clear();
-				printf("Escolha inv�lida, tente novamente.\n\n\n");
+				printf("Escolha inválida, tente novamente.\n\n\n");
 				break;
 		}
 	}
