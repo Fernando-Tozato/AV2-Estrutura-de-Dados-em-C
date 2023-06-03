@@ -1,3 +1,4 @@
+// incluudes
 #include <stdio.h>
 #include <locale.h>
 #include "pilha.h"
@@ -5,18 +6,19 @@
 #include "arvore.h"
 #include "clear.h"
 
+// fun√ß√£o principal do programa
 void main () {
 	setlocale(LC_ALL, "Portuguese");
 	int e;
 	char espera[2];
 	
 	clear();
-	printf("--------------------- Seja bem-vinda ‡ quest„o 2! ---------------------");
+	printf("--------------------- Seja bem-vinda √† quest√£o 2! ---------------------");
 	while(1) {
-		printf("\nQual tipo de estrutura de dados vocÍ deseja usar?");
+		printf("\nQual tipo de estrutura de dados voc√™ deseja usar?");
 		printf("\n    1 - Pilha.");
 		printf("\n    2 - Fila.");
-		printf("\n    3 - ¡rvore.");
+		printf("\n    3 - √Årvore.");
 		printf("\n    0 - Sair.");
 		printf("\nEscolha: ");
 		scanf("%d",&e);
@@ -36,7 +38,7 @@ void main () {
 				return;
 			default:
 				clear();
-				printf("\n\n\nEscolha inv·lida, tente novamente.");
+				printf("\n\n\nEscolha inv√°lida, tente novamente.");
 				break;
 		}
 	}
