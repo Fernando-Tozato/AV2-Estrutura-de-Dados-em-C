@@ -27,3 +27,5 @@ implementada, a mesma deve implementar as funções abaixo (em outro menu de esc
         sub-árvore a esquerda.
     
         3. Implemente a função recursiva que irá retornar o maior elemento da Árvore Binária. 
+
+Aluno: Fernando José Tozato de Siqueira. 202202760811.
