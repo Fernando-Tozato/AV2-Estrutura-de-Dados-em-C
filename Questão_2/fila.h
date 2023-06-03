@@ -1,6 +1,7 @@
 #ifndef FILA_H
 #define FILA_H
 
+// includes
 #include "node.h"
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -8,8 +9,10 @@
 #include <limits.h>
 #include "clear.h"
 
+// variável global de tamanho
 int tam;
 
+// função para verificar se a fila está vazia
 int FilaVazia (node*FILA) {
 	if (FILA->prox == NULL) {
 		return 1;
@@ -18,6 +21,7 @@ int FilaVazia (node*FILA) {
 	}
 }
 
+// função para inserir mais itens
 void Enqueue (node*FILA) {
 	node*novo = (node*) malloc(sizeof(node));
 	novo->prox = NULL;
@@ -37,9 +41,10 @@ void Enqueue (node*FILA) {
 	tam++;
 }
 
+// função para remover itens
 void Dequeue (node*FILA) {
 	if (FilaVazia(FILA)) {
-		printf("\nA fila est� vazia.\n");
+		printf("\nA fila está vazia.\n");
 		return;
 	} else {
 		node*tmp = FILA->prox;
@@ -49,9 +54,10 @@ void Dequeue (node*FILA) {
 	}
 }
 
+// função para imprimir itens
 void ImprimeFila (node*FILA) {
 	if (FilaVazia(FILA)) {
-		printf("\nA fila est� vazia.\n");
+		printf("\nA fila está vazia.\n");
 		return;
 	}
 	node*tmp;
@@ -64,9 +70,10 @@ void ImprimeFila (node*FILA) {
 	printf("\nQuantidade de itens na fila: %d\n", tam);
 }
 
+// função para limpar a fila
 void LimpaFila (node*FILA) {
 	if (FilaVazia(FILA)) {
-		printf("\nA fila j� est� vazia\n");
+		printf("\nA fila já está vazia\n");
 		return;
 	} else {
 		for (int i=0; i<tam+1; i++) {
@@ -84,9 +91,10 @@ void LimpaFila (node*FILA) {
 	}
 }
 
+// função para buscar o maior item
 void Maior (node *FILA) {
 	if (FilaVazia(FILA)) {
-		printf("\nA fila est� vazia.\n");
+		printf("\nA fila está vazia.\n");
 		return;
 	}
 	node *tmp;
@@ -102,9 +110,10 @@ void Maior (node *FILA) {
 	printf("\nQuantidade de itens na fila: %d\n", tam);
 }
 
+// função para buscar o menor item
 void Menor (node *FILA) {
 	if (FilaVazia(FILA)) {
-		printf("\nA fila est� vazia.\n");
+		printf("\nA fila está vazia.\n");
 		return;
 	}
 	node*tmp;
@@ -120,6 +129,7 @@ void Menor (node *FILA) {
 	printf("\nQuantidade de itens na fila: %d\n", tam);
 }
 
+// função principal da fila
 void Fila () {
 	setlocale(LC_ALL, "Portuguese");
 	
@@ -132,7 +142,7 @@ void Fila () {
 	
 	clear();
 	while(1) {
-		printf("O que voc� deseja fazer?");
+		printf("O que você deseja fazer?");
 		printf("\n    1 - Inserir.");
 		printf("\n    2 - Remover.");
 		printf("\n    3 - Imprimir fila.");
@@ -182,7 +192,7 @@ void Fila () {
 				return;
 			default:
 				clear();
-				printf("Escolha inv�lida, tente novamente.\n\n\n");
+				printf("Escolha inválida, tente novamente.\n\n\n");
 				break;
 		}
 	}
