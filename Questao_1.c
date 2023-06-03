@@ -1,6 +1,8 @@
+// includes
 #include <stdio.h>
 #include <locale.h>
 
+// fun√ß√£o que ordena usando bubblesort
 int* bubblesort (int *vet, int n) {
 	int aux;
 	for (int i=0; i<n-1; i++) {
@@ -15,6 +17,7 @@ int* bubblesort (int *vet, int n) {
 	return vet;
 }
 
+// fun√ß√£o que ordena usando isertionsort
 int* insertionsort (int *vet, int n) {
 	for (int j=2; j<n; j++) {
 		int chave = vet[j];
@@ -28,9 +31,10 @@ int* insertionsort (int *vet, int n) {
 	return vet;
 }
 
+// fun√ß√£o principal do programa
 void main() {
 	setlocale(LC_ALL, "Portuguese");
-	printf("\n\n\n--------------------- Seja bem-vinda ‡ quest„o 2! ---------------------");
+	printf("\n\n\n--------------------- Seja bem-vinda √† quest√£o 2! ---------------------");
 	while (1) {
 		int n;
 		printf("\nPrimeiro, escolha o tamanho do vetor (0 para sair): ");
@@ -39,12 +43,12 @@ void main() {
 			int vet[n], *vet2;
 			printf("\n\nAgora, preencha o vetor:\n\n");
 			for (int i=0; i<n; i++) {
-				printf("EspaÁo %d: ",i+1);
+				printf("Espa√ßo %d: ",i+1);
 				scanf("%d",&vet[i]);
 			}
 			while (1) {
 				int e;
-				printf("\n\nEscolha o tipo de ordenaÁ„o:");
+				printf("\n\nEscolha o tipo de ordena√ß√£o:");
 				printf("\n    1 - Bubble Sort.");
 				printf("\n    2 - Insertion Sort.");
 				printf("\n    0 - Sair.");
@@ -64,7 +68,7 @@ void main() {
 						printf("------------------------------- Adeus!! -------------------------------\n\n\n");
 						return;
 					default: 
-						printf("\n\n\n\nInsira um valor v·lido.");
+						printf("\n\n\n\nInsira um valor v√°lido.");
 						break;
 				}
 				
@@ -76,7 +80,7 @@ void main() {
 			printf("------------------------------- Adeus!! -------------------------------\n\n\n");
 			return;
 		} else {
-			printf("\n\n\n\nInsira um valor v·lido.");
+			printf("\n\n\n\nInsira um valor v√°lido.");
 		}
 	}
 }
