@@ -1,16 +1,17 @@
 #ifndef PILHA_H
 #define PILHA_H
 
+// includes
 #include "node.h"
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <locale.h>
 #include "clear.h"
 
-// vari·vel global com o tamanho da pilha
+// vari√°vel global com o tamanho da pilha
 int tam;
 
-// funÁ„o que verifica se a pilha È vazia
+// fun√ß√£o que verifica se a pilha est√° vazia
 int PilhaVazia (node *PILHA) {
 	if (PILHA->prox == NULL) {
 		return 1;
@@ -19,7 +20,7 @@ int PilhaVazia (node *PILHA) {
 	}
 }
 
-// funÁ„o para empilhar
+// fun√ß√£o para inserir itens na pilha
 void Push (node *PILHA) {
 	node *novo=(node *) malloc(sizeof(node));
 	novo->prox = NULL;
@@ -39,10 +40,10 @@ void Push (node *PILHA) {
 	tam++;
 }
 
-// funÁ„o para desempilhar
+// fun√ß√£o para remover itens
 void Pop (node *PILHA) {
 	if (PilhaVazia(PILHA)) {
-		printf("\nA pilha est· vazia.\n");
+		printf("\nA pilha est√° vazia.\n");
 		return;
 	} else {
 		node *ultimo = PILHA->prox;
@@ -58,10 +59,10 @@ void Pop (node *PILHA) {
 	}
 }
 
-// funÁ„o para imprimir a pilha
+// fun√ß√£o para imprimir a pilha
 void ImprimePilha (node *PILHA) {
 	if (PilhaVazia(PILHA)) {
-		printf("\nA pilha est· vazia.\n");
+		printf("\nA pilha est√° vazia.\n");
 		return;
 	}
 	node *tmp;
@@ -74,10 +75,10 @@ void ImprimePilha (node *PILHA) {
 	printf("\nQuantidade de itens na pilha: %d\n", tam);
 }
 
-// funÁ„o para limpar pilha
+// fun√ß√£o para limpar pilha
 void LimpaPilha (node *PILHA) {
 	if (PilhaVazia(PILHA)) {
-		printf("\nA pilha j· est· vazia\n");
+		printf("\nA pilha j√° est√° vazia\n");
 		return;
 	} else {
 		for (int i=0; i<tam+1; i++) {
@@ -95,10 +96,10 @@ void LimpaPilha (node *PILHA) {
 	}
 }
 
-// funÁ„o para imprimir topo da pilha
+// fun√ß√£o para imprimir topo da pilha
 void ImprimeTopo (node *PILHA) {
 	if (PilhaVazia(PILHA)) {
-		printf("\nA pilha est· vazia.\n");
+		printf("\nA pilha est√° vazia.\n");
 		return;
 	} else {
 		node *ultimo = PILHA->prox;
@@ -113,7 +114,7 @@ void ImprimeTopo (node *PILHA) {
 	}
 }
 
-// funÁ„o principal da pilha
+// fun√ß√£o principal da pilha
 void Pilha () {
 	setlocale(LC_ALL, "Portuguese");
 	
@@ -126,7 +127,7 @@ void Pilha () {
 	
 	clear();
 	while(1) {
-		printf("O que vocÍ deseja fazer?");
+		printf("O que voc√™ deseja fazer?");
 		printf("\n    1 - Inserir.");
 		printf("\n    2 - Remover.");
 		printf("\n    3 - Imprimir pilha.");
@@ -169,7 +170,7 @@ void Pilha () {
 				return;
 			default:
 				clear();
-				printf("Escolha inv·lida, tente novamente.\n\n\n");
+				printf("Escolha inv√°lida, tente novamente.\n\n\n");
 				break;
 		}
 	}
